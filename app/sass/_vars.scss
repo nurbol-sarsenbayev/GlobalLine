@@ -1,0 +1,20 @@
+@import './fonts';
+@import './_mixins/circle';
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$default_family: Gilroy, Arial;
+$title_family: Gilroy, Arial;
+$font_size: 14px;
+$title_color: #000;
+$text_color: #000;
+
+$accent: #05a247;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1360, xxxl: 1592);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1300, xxxl: 1532);
+
+$gutter: $grid-gutter-width;
