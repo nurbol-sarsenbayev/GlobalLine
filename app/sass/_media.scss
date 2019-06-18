@@ -1,11 +1,18 @@
 
-@import "vars";
 
 /*==========  Desktop First  ==========*/
 
+@include media-breakpoint-down(xxl) {
+
+}
+
+@include media-breakpoint-down(xl) {
+
+}
+
 // ≥1200px
 @include media-breakpoint-down(lg) {
-	
+
 }
 
 // ≥992px
@@ -159,5 +166,13 @@
 
 // ≤1200px
 @include media-breakpoint-up(xl) {
+	
+}
+
+@include media-breakpoint-up(xxl) {
+	
+}
+
+@include media-breakpoint-up(xxxl) {
 	
 }
