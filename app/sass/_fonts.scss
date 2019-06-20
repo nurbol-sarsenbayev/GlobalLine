@@ -1,7 +1,8 @@
 @import "_mixins/font-face";
 
 @include font-face ("Gilroy", "../fonts/Gilroy/ExtraBold/Gilroy-ExtraBold", 900);
-@include font-face ("Gilroy", "../fonts/Gilroy/Gilroy-LightItalic", 300);
+@include font-face ("Gilroy", "../fonts/Gilroy/Gilroy-Light", 300);
+@include font-face ("Gilroy", "../fonts/Gilroy/Gilroy-Medium", 500);
 @include font-face ("Gilroy", "../fonts/Gilroy/Gilroy-Regular", normal);
 @include font-face ("Oswald", "../fonts/Oswald/Oswald-Bold", bold);
 @include font-face ("Oswald", "../fonts/Oswald/Oswald-Light", 300);

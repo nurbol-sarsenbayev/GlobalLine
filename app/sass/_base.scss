@@ -154,42 +154,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-.call-me {
-  position: fixed;
-	bottom: 20px;
-	left: 20px;
-	z-index: 99;
-	cursor: pointer;
-  @include circle(50px);
-  background-color: #58ea00;
-  cursor: pointer;
-  display: none;
-
-  .fa {
-    color: #fff;
-    font-size: 25px;
-    position: relative;
-    top: 5px;
-  }
-
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    border: 1px solid #58ea00;
-    border-radius: 50%;
-    animation: pulse 1.5s linear infinite;
-  }
-
-  &:after {
-    animation-delay: 0.5s;
-  }
-}
-
 @keyframes pulse {
   0% {
     opacity: 0;
@@ -220,20 +184,6 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid $accent;
   cursor: pointer;
 
-  &---img {
-    position: relative;
-    margin-left: 45px;
-    &::before {
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      background-image: url("../img/customer-service.png");
-      left: -30px;
-      border: 1px solid $accent;
-    }
-  }
-
   &:hover {
     background-color: transparent;
     border: 1px solid $accent;
@@ -254,13 +204,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .input, .textarea {
-  color: $text_color;
-  font-size: 14px;
+  color: #fff;
+  font-family: Oswald, serif;
+  font-size: 15px;
+  font-weight: 500;
   line-height: inherit;
-  border: 1px solid $accent;
-  background-color: transparent;
-  font-family: $default_family, sans-serif;
-  padding: 11px 20px 11px 35px;   
+  border: none;
+  background-color: #4e4e4e;
+  padding: 19px 15px 19px 20px;   
+  max-width: 263px;
+  width: 100%;
 
   &.error {
     border-color: red;
@@ -275,22 +228,22 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
     text-align: left;
     color: red;
-    padding-left: 35px;
+    padding-left: 20px;
     margin-top: 5px;
 	}
 
 	&::-webkit-input-placeholder {
-    color: #000;
+    color: #fff;
 		opacity: 1;
 	}
 	
 	&::-moz-placeholder {
-    color: #000;
+    color: #fff;
 		opacity: 1;
 	}
 	
 	&:-ms-input-placeholder {
-    color: #000;
+    color: #fff;
 		opacity: 1;
   }
   
@@ -357,15 +310,16 @@ h1, h2, h3, h4, h5, h6 {
 
     .input-div {
       margin-right: 20px;
+      width: 100%;
     }
   }
 
   &--vertical {
-    max-width: 300px;
+    // max-width: 300px;
     
     .form {
       &__content {
-        max-width: 260px;
+        // max-width: 260px;
         margin: 0 auto;    
       }
     }
@@ -396,8 +350,8 @@ h1, h2, h3, h4, h5, h6 {
 		&-prev, &-next {
 			position: absolute;
 			top: 50%;
-			width: 26px;
-      height: 50px;
+			width: 34px;
+      height: 11px;
       background-image: url('../img/arrow-left.png') !important;
       background-repeat: no-repeat !important;
       background-position: center center !important;
@@ -422,14 +376,18 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     &-dot {
-      width: 16px;
-      height: 16px;
-      background: $accent !important;
-      margin: 0 5px;
+      width: 6px;
+      height: 6px;
+      background-color: $accent !important;
       border-radius: 50%;
 
       &.active {
-        background: darken($accent, 15%) !important;
+        width: 12px;
+        height: 12px;
+        background-color: transparent !important;
+        margin: 0 20px;
+        border-radius: 50%;
+        border: 3px solid $accent !important;
       } 
     }
 	}
@@ -444,6 +402,7 @@ h1, h2, h3, h4, h5, h6 {
     left: auto;
     right: 0;
     color: $text_color;
+    background-color: rgba(#fff, .8);
     z-index: 20;
 
     &:before {
@@ -451,8 +410,196 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Oswald, serif;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
   &--small {
     max-width: 400px;
     padding: 60px 25px;
+
+    .form {
+      max-width: 300px;
+      margin: 0 auto;
+      &__content {
+        display: block;        
+      }
+
+      .input {
+        max-width: 300px;
+      }
+
+      .button, .input-div {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Bootstrap css */
+.d-none {
+  display: none !important;
+}
+/* End Bootstrap*/
+/* Custom checkbox */
+.label {
+  font-size: 21px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+  
+  .checkbox {
+    margin-right: 20px;
+  }
+}
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  [type="checkbox"], [type="radio"] {
+    display: none;
+
+    & + span {
+      display: none;
+      width: 6px;
+      height: 6px;
+      background-color: $accent;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:checked + span {
+      display: block;
+    }
+  }
+}
+/* End Custom checkbox */
+
+.question {
+  
+  &__error {
+    display: none;
+    margin: 30px 0 10px;
+    color: red;
+    text-align: center;
+  }
+
+  &.has-error {
+    .question__error {
+      display: block;
+    }
+  }
+
+  &__num {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 28px;
+    span {
+      color: $accent;
+    }
+  }  
+}
+
+.ukazat {
+  outline: none;  
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 0 15px 3px;
+  width: 100%;
+  max-width: 265px;
+  background-color: transparent;
+  position: absolute;
+  top: 30px;
+  left: 28px;
+
+  &::placeholder {
+    font-size: 15px;
+    font-style: italic;
+  }
+}
+  
+// @include media-breakpoint-down(xs) {
+  .callback__wrapper {
+    display: block !important; 
+  }
+  // }
+  
+  
+.callback {
+  &__wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #43a047;
+    z-index: 1000;
+    display: none !important;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    text-align: center;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    a {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 auto 5px;
+    width: 40px;
+    height: 28px;
+  }
+
+  &__whatsapp {
+    background: url(https://nurbol-sarsenbayev.github.io/cdn/svg/whatsapp-icon.svg) no-repeat center;
+  }
+
+  &__phone {
+    background: url(https://nurbol-sarsenbayev.github.io/cdn/svg/phone-icon.svg) no-repeat center;
   }
 }
